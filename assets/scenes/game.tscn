@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://drlfh6py1qxsk"]
+[gd_scene load_steps=10 format=3 uid="uid://drlfh6py1qxsk"]
 
-[ext_resource type="PackedScene" uid="uid://chu8wmp8nb78w" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://chu8wmp8nb78w" path="res://assets/scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://boxobfbhsofk5" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://dwgxj1iv3vvn0" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dwgxj1iv3vvn0" path="res://assets/scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ckwff50d1eskh" path="res://assets/scenes/coin.tscn" id="4_lbhrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -177,6 +178,21 @@ texture = ExtResource("2_yqjtg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
+[sub_resource type="Animation" id="Animation_lbhrr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(335, 20)]
+}
+
 [sub_resource type="Animation" id="Animation_lnu2h"]
 resource_name = "move"
 length = 2.0
@@ -192,21 +208,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(335, 20), Vector2(433, 20)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(335, 20)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
@@ -241,3 +242,21 @@ libraries = {
 &"": SubResource("AnimationLibrary_iywne")
 }
 autoplay = "move"
+
+[node name="coin" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(72, 42)
+
+[node name="coin2" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(200, -6)
+
+[node name="coin3" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(248, 42)
+
+[node name="coin4" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(89, -54)
+
+[node name="coin5" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(264, -22)
+
+[node name="coin6" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(521, -22)
