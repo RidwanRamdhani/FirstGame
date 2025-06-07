@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://drlfh6py1qxsk"]
+[gd_scene load_steps=19 format=3 uid="uid://drlfh6py1qxsk"]
 
 [ext_resource type="PackedScene" uid="uid://chu8wmp8nb78w" path="res://assets/scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://boxobfbhsofk5" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bkhw8bxb7meqx" path="res://assets/scenes/killzone.tscn" id="5_j62u1"]
 [ext_resource type="PackedScene" uid="uid://dq2vnqq5yvnlk" path="res://assets/scenes/green_slime.tscn" id="6_5aext"]
 [ext_resource type="FontFile" uid="uid://cqlakyd5nrqk8" path="res://assets/fonts/PixelOperator8.ttf" id="7_3w2km"]
+[ext_resource type="Script" uid="uid://ckvatk7mbueji" path="res://scripts/game_manager.gd" id="8_wfsp4"]
+[ext_resource type="FontFile" uid="uid://dr1lbdl0whlp2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_pw37s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -221,6 +223,21 @@ _data = {
 &"move": SubResource("Animation_lnu2h")
 }
 
+[sub_resource type="Animation" id="Animation_5aext"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(543, -12)]
+}
+
 [sub_resource type="Animation" id="Animation_j62u1"]
 resource_name = "move_up"
 length = 2.0
@@ -238,21 +255,6 @@ tracks/0/keys = {
 "values": [Vector2(543, -12), Vector2(543, -107)]
 }
 
-[sub_resource type="Animation" id="Animation_5aext"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(543, -12)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3w2km"]
 _data = {
 &"RESET": SubResource("Animation_5aext"),
@@ -260,6 +262,21 @@ _data = {
 }
 
 [node name="game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_wfsp4")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 771.0
+offset_top = -94.0
+offset_right = 889.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("9_pw37s")
+theme_override_font_sizes/font_size = 8
+text = "You collected X Coins."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lbhrr")

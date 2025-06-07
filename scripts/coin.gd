@@ -1,6 +1,8 @@
 extends Area2D
 
+@onready var game_manager: Node = %GameManager
+@onready var pickup_animation: AnimationPlayer = $PickupAnimation
 
 func _on_body_entered(body: Node2D) -> void:
-	print("+1 Coin.")
-	queue_free()
+	game_manager.add_score()
+	pickup_animation.play("pickup")
