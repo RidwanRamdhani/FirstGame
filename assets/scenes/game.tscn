@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drlfh6py1qxsk"]
+[gd_scene load_steps=17 format=3 uid="uid://drlfh6py1qxsk"]
 
 [ext_resource type="PackedScene" uid="uid://chu8wmp8nb78w" path="res://assets/scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://boxobfbhsofk5" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckwff50d1eskh" path="res://assets/scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bkhw8bxb7meqx" path="res://assets/scenes/killzone.tscn" id="5_j62u1"]
 [ext_resource type="PackedScene" uid="uid://dq2vnqq5yvnlk" path="res://assets/scenes/green_slime.tscn" id="6_5aext"]
+[ext_resource type="FontFile" uid="uid://cqlakyd5nrqk8" path="res://assets/fonts/PixelOperator8.ttf" id="7_3w2km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -331,3 +332,41 @@ autoplay = "move_up"
 
 [node name="GreenSlime" parent="." instance=ExtResource("6_5aext")]
 position = Vector2(137, 6)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -125.0
+offset_top = 22.0
+offset_right = -39.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("7_3w2km")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump"
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 265.0
+offset_top = 71.0
+offset_right = 351.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("7_3w2km")
+theme_override_font_sizes/font_size = 8
+text = "Don't Fall !!!"
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 81.0
+offset_top = -26.0
+offset_right = 199.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("7_3w2km")
+theme_override_font_sizes/font_size = 8
+text = "Careful of Enemy !!"
+
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 779.0
+offset_top = -110.0
+offset_right = 897.0
+offset_bottom = -87.0
+theme_override_fonts/font = ExtResource("7_3w2km")
+theme_override_font_sizes/font_size = 8
+text = "Good Job Buddy !"
