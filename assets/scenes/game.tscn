@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://drlfh6py1qxsk"]
+[gd_scene load_steps=20 format=3 uid="uid://drlfh6py1qxsk"]
 
 [ext_resource type="PackedScene" uid="uid://chu8wmp8nb78w" path="res://assets/scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://boxobfbhsofk5" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cqlakyd5nrqk8" path="res://assets/fonts/PixelOperator8.ttf" id="7_3w2km"]
 [ext_resource type="Script" uid="uid://ckvatk7mbueji" path="res://scripts/game_manager.gd" id="8_wfsp4"]
 [ext_resource type="FontFile" uid="uid://dr1lbdl0whlp2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_pw37s"]
+[ext_resource type="PackedScene" uid="uid://w7exyqauyjq" path="res://assets/scenes/score_ui.tscn" id="10_k2t1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -387,3 +388,7 @@ offset_bottom = -87.0
 theme_override_fonts/font = ExtResource("7_3w2km")
 theme_override_font_sizes/font_size = 8
 text = "Good Job Buddy !"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("10_k2t1h")]

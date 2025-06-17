@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://w7exyqauyjq"]
+
+[ext_resource type="FontFile" uid="uid://dr1lbdl0whlp2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_b41xh"]
+
+[node name="ScoreUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreUILabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 78.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("1_b41xh")
+theme_override_font_sizes/font_size = 15
+text = "Score: 0"
